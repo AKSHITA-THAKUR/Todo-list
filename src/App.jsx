@@ -1,12 +1,9 @@
 import { useState , useEffect } from "react";
 import React from "react";
+import AddTo from "./Components/AddTo"
+import ListToDo from "./Components/ListToDo"
 import "./App.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCircleCheck,
-  faPen,
-  faTrashCan,
-} from "@fortawesome/free-solid-svg-icons";
+
 
 const getLocalItems = () => {
   const list = localStorage.getItem("lists");
@@ -56,52 +53,21 @@ function App() {
       <h2 className="heading"> Todo List App </h2>
       <br></br>
 
-      {/* Form for add task*/}
-      <div className="row">
-        <div className="col"></div>
-        <input
-          value={newTask}
-          onChange={(e) => setNewTask(e.target.value)}
-          className="addwork"
-        />
-        <div className="auto">
-          <button onClick={addTask} className="btn">
-            {" "}
-            AddTask
-          </button>
-        </div>
-      </div>
+    <AddTo
+      newTask={newTask}
+      setNewTask={setNewTask}
+      addTask={addTask}
+    
+    />
 
       {/*display todo*/}
       {toDo && toDo.length ? "" : "No tasks.."}
-
-      {toDo &&
-        toDo
-          .sort((a, b) => (a.id > b.id ? 1 : -1)) // to sort the tasks
-          .map((task, index) => {
-            return (
-              <React.Fragment key={task.id}>
-                <div className="taskbg">
-                  <div className={task.status ? "done" : ""}>
-                    <span className="taskNumber">{index + 1}</span>
-                    <span className="taskText">{task.title}</span>
-                  </div>
-                  <div className="iconsWrap">
-                    <span
-                      title="Completed / Not completed"
-                      onClick={(e) => markDone(task.id)}
-                    >
-                      <FontAwesomeIcon icon={faCircleCheck} />
-                    </span>
-
-                    <span title="Delete" onClick={() => deleteTask(task.id)}>
-                      <FontAwesomeIcon className="dustbin" icon={faTrashCan} />
-                    </span>
-                  </div>
-                </div>
-              </React.Fragment>
-            );
-          })}
+    <ListToDo
+     toDo={toDo}
+     markDone={markDone}
+     deleteTask={deleteTask}
+    
+    />
     </div>
   );
 }
