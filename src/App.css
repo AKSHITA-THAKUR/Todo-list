@@ -1,0 +1,142 @@
+body{
+  background-color: #FEFDED;
+  color: #fff;
+}
+.heading{
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center; /* Center align */
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); 
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* Normal position */
+  }
+}
+
+
+.App{
+  text-align: center;
+  background-color: #FA7070;
+  height: auto;
+  width: 800px;
+  margin: auto;
+  margin-top: 100px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.taskbg{
+background-color: #A1C398;
+border-radius: 6px;
+margin-bottom: 20px;
+padding: 10px 140px 10px 15px;
+text-align: left;
+font-size: 22px;
+position: relative;
+}
+
+.taskNumber{
+  color: black;
+  border: 1px solid white;
+  border-radius: 50px;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  text-align: center;
+  font-size: 14px;
+  margin-right: 8px;
+  align-items: center;
+  justify-content: center;
+
+}
+.taskbg  .taskText {
+  flex: 1;
+  color: black;
+}
+.taskbg .done  .taskText{
+text-decoration: line-through;
+opacity: 0.3;
+
+}
+.taskbg  div{
+  display: flex;
+  align-items: center;
+   
+}
+.taskbg  .iconsWrap{
+  position: absolute;
+  top:50% ;
+  transform: translateY(-50%);
+  right: 15px;
+  width: auto;
+   display: inline-block;
+}
+.taskbg .iconsWrap span {
+  display: inline-block;
+  margin: 0px 10px 0 10px;
+  cursor: pointer;
+  color: darkgreen;
+}
+.taskbg .iconsWrap  span:hover {
+  color: yellow;
+
+}
+.pen{
+  color: orange;
+}
+.dustbin{
+  color: red;
+}
+.pen:hover{
+  color: yellow;
+}
+.dustbin:hover{
+  color: yellow;
+}
+.row{
+  display: flex;
+  justify-content: space-between;
+}
+.addwork{
+background-color: white;
+width: auto;
+border-radius: 6px;
+margin-bottom: 20px;
+padding: 10px 140px 10px 15px;
+text-align: left;
+font-size: 22px;
+position: relative;
+}
+.btn{
+  background-color: green;
+  border: none;
+  border-radius: 5px;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.upwork{
+  margin-left: 140px;
+}
+.btn{
+  margin-right: 20px;
+}
+.btn:hover{
+  background-color: rgb(5, 80, 5);
+}
+.cancel:hover{
+  background-color: orangered;
+}
